@@ -34,10 +34,10 @@ window.onload = function() {
                 cleanHtml = cleanHtml.replace(/{{ДАТА_ЗАПОЛНЕНИЯ}}/g, '<b style="color:#3182ce;">[Текущая дата]</b>');
                 cleanHtml = cleanHtml.replace(/{{ФИО}}/g, '<b style="color:#3182ce;">[Ваше ФИО]</b>');
                 cleanHtml = cleanHtml.replace(/{{ДАТА_РОЖДЕНИЯ}}/g, '<b style="color:#3182ce;">[Дата рождения]</b>');
-                cleanHtml = cleanHtml.replace(/{{КОМПАНИЯ}}/g, '<b style="color:#3182ce;">[Название организации]</b>');
+               cleanHtml = cleanHtml.replace(/{{КОМПАНИЯ}}/g, '<b style="color:#3182ce;">[Магазин/Город]</b>');
                 cleanHtml = cleanHtml.replace(/{{ДОЛЖНОСТЬ}}/g, '<b style="color:#3182ce;">[Ваша должность]</b>');
                 cleanHtml = cleanHtml.replace(/{{ДАТА_НАЧАЛА}}/g, '<b style="color:#3182ce;">[Дата начала]</b>');
-                cleanHtml = cleanHtml.replace(/{{ЗАРПЛАТА}}/g, '<b style="color:#3182ce;">30000р</b>');
+                cleanHtml = cleanHtml.replace(/{{ЗАРПЛАТА}}/g, '<b style="color:#3182ce;">30000</b>');
                 cleanHtml = cleanHtml.replace(/{{ИНИЦИАЛЫ}}/g, '<b style="color:#3182ce;">[Ваши инициалы]</b>');
                 cleanHtml = cleanHtml.replace(/{{ПОДПИСЬ}}/g, ''); // Скрываем технический маркер подписи
                 
