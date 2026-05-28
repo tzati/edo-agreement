@@ -22,13 +22,26 @@ fioInput.addEventListener('input', function() {
     }
 });
 
-// 2. Получение красивого HTML-текста из Google шаблона при загрузке страницы
+// 2. Получение красивого HTML-текста и маскировка тегов
 window.onload = function() {
     fetch(WEB_APP_URL)
         .then(response => response.json())
         .then(data => {
             if (data.html) {
-                document.getElementById('text-box').innerHTML = data.html;
+                let cleanHtml = data.html;
+                
+                // Визуальная замена серверных тегов для пользователя
+                cleanHtml = cleanHtml.replace(/{{ДАТА_ЗАПОЛНЕНИЯ}}/g, '<b style="color:#3182ce;">[Текущая дата]</b>');
+                cleanHtml = cleanHtml.replace(/{{ФИО}}/g, '<b style="color:#3182ce;">[Ваше ФИО]</b>');
+                cleanHtml = cleanHtml.replace(/{{ДАТА_РОЖДЕНИЯ}}/g, '<b style="color:#3182ce;">[Дата рождения]</b>');
+                cleanHtml = cleanHtml.replace(/{{КОМПАНИЯ}}/g, '<b>ИП «ЧАГАЕВ Х.-М.»</b>');
+                cleanHtml = cleanHtml.replace(/{{ДОЛЖНОСТЬ}}/g, '<b style="color:#3182ce;">[Ваша должность]</b>');
+                cleanHtml = cleanHtml.replace(/{{ДАТА_НАЧАЛА}}/g, '<b style="color:#3182ce;">[Дата начала]</b>');
+                cleanHtml = cleanHtml.replace(/{{ЗАРПЛАТА}}/g, '<b style="color:#3182ce;">[Размер зарплаты]</b>');
+                cleanHtml = cleanHtml.replace(/{{ИНИЦИАЛЫ}}/g, '<b style="color:#3182ce;">[Ваши инициалы]</b>');
+                cleanHtml = cleanHtml.replace(/{{ПОДПИСЬ}}/g, ''); // Скрываем технический маркер подписи
+                
+                document.getElementById('text-box').innerHTML = cleanHtml;
             } else {
                 document.getElementById('text-box').innerText = "Ошибка загрузки документа.";
             }
