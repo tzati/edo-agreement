@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ознакомление с документом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="step-1" class="container">
+        <h2>Ознакомьтесь с документом</h2>
+        <div id="text-box" class="scroll-box">Загрузка текста соглашения...</div>
+        <button id="next-btn" disabled>Я прочитал(а) до конца</button>
+    </div>
+
+    <div id="step-2" class="container" style="display: none;">
+        <h2>Заполнение реквизитов</h2>
+        <form id="edo-form">
+            <div class="input-group">
+                <label>Ваше ФИО (полностью):</label>
+                <input type="text" id="fio" placeholder="Например: Иванов Иван Иванович" required>
+            </div>
+            <div class="input-group">
+                <label>Дата рождения:</label>
+                <input type="text" id="birthDate" placeholder="Например: 15.05.1993" required>
+            </div>
+            <div class="input-group">
+                <label>Организация / ИП:</label>
+                <input type="text" id="company" value="ИП «ЧАГАЕВ Х.-М.»" required>
+            </div>
+            <div class="input-group">
+                <label>Должность:</label>
+                <input type="text" id="jobTitle" placeholder="Например: Менеджер по продажам" required>
+            </div>
+            <div class="input-group">
+                <label>Дата начала работы:</label>
+                <input type="text" id="startDate" placeholder="Например: 28.05.2026" required>
+            </div>
+            <div class="input-group">
+                <label>Размер заработной платы (руб.):</label>
+                <input type="number" id="salary" placeholder="Например: 50000" required>
+            </div>
+            <div class="input-group">
+                <label>Ваши инициалы (для расшифровки):</label>
+                <input type="text" id="initials" placeholder="Сгенерируются автоматически" required>
+            </div>
+
+            <div class="signature-area">
+                <label>Поставьте вашу подпись на экране пальцем:</label>
+                <canvas id="sig-canvas" width="340" height="150"></canvas>
+                <button type="button" id="clear-btn">Очистить подпись</button>
+            </div>
+
+            <button type="submit" id="submit-btn">Подписать и отправить</button>
+        </form>
+    </div>
+
+    <div id="step-3" class="container" style="display: none;">
+        <div class="success-message">
+            <h2>Документ успешно подписан!</h2>
+            <p>Спасибо. Соглашение сформировано и отправлено в отдел кадров. Можете закрыть страницу.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
