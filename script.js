@@ -1,4 +1,4 @@
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyPQMUST6vgDAFk9C9o3bJ4uJLorh4dzllaia4x_B9rwTV9EU9Wcb0A24pQAkGCopX-ow/exec"; 
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz6dtYiRma3v0b-8-QX3_7ucNLtwm96stzOEICwU7fOh0pVk5gsKVQ6jbpKG3yndMvK/exec"; 
 const SECURITY_TOKEN = "MySuperSecretToken2026";
 
 // 1. Гибридный парсинг параметров из URL (для поддержки индивидуальных ссылок)
